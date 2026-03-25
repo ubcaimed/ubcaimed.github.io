@@ -1,217 +1,445 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Intro to Medical AI</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI in Medicine at UBC</title>
+    <meta name="description" content="A student-led research group exploring how AI can responsibly support clinical care, medical education, and health research at the University of British Columbia." />
+
+    <!-- Fonts: Inter (headings + body), Source Serif Pro (accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/site.css" />
 </head>
-<body class="is-preload">
+<body>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="inner">
-            <a href="#" class="image avatar"><img src="images/logo.png" alt="Course Logo" /></a>
-            <h1><strong>Welcome to the Introduction to Medical Artificial Intelligence</strong></h1>
-            <p>Explore the junction of healthcare and AI through our comprehensive resources and workshops.</p>
-            <nav>
-                <ul>
-                    <li><a href="#empowering">Empowering Medical Students with AI</a></li>
-                    <li><a href="#course-overview">Course Overview and Resources</a></li>
-                    <li><a href="#workshop-slides">Workshop Slides</a></li>
-                    <li><a href="#related-research">Related Research</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                </ul>
-            </nav>
+<!-- Navigation — sticky, minimal -->
+<nav class="site-nav" aria-label="Primary navigation">
+    <div class="container">
+        <a href="#" class="site-nav-brand">
+            <img src="images/logo.png" alt="" aria-hidden="true" />
+            AI in Medicine · UBC
+        </a>
+        <ul class="site-nav-links" role="list">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#people">People</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </div>
+    <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#people">People</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- ============================================================
+     1. HERO
+     Restrained academic hero. No oversized imagery.
+     Credibility metadata replaces marketing claims.
+     ============================================================ -->
+<section class="hero" id="hero">
+    <div class="container">
+        <h1>AI in Medicine at UBC</h1>
+        <p class="hero-subtitle serif">Exploring how artificial intelligence can responsibly support clinical care, medical education, and health research.</p>
+        <p class="hero-body">We are a student-led group working across medicine, engineering, and health systems to study how AI can be used thoughtfully in real clinical and educational settings.</p>
+        <div class="hero-meta">
+            <span class="hero-meta-item"><strong>Active since</strong> 2019</span>
+            <span class="hero-meta-item"><strong>Publications</strong> 2020–2025</span>
+            <span class="hero-meta-item"><strong>Interdisciplinary,</strong> student-led research team</span>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <div id="main">
-<!-- Empowering Medical Students with AI -->
-<section id="empowering">
-    <h2>Empowering Medical Students with AI</h2>
-    <p>Discover how artificial intelligence is revolutionizing medical education and providing new tools to future healthcare professionals. As a vibrant student club at the intersection of technology and healthcare, we cater to a diverse group of students. Our members, many of whom have backgrounds in technology and engineering, actively contribute to peer-reviewed research that explores the impactful role of AI in medicine.</p>
-    <p>We are dedicated to hands-on teaching and fostering a deep understanding of AI applications in medical settings. Through workshops, and student-driven research projects, we provide practical experiences that enhance learning and empower medical students to harness AI effectively. Our work focuses on the implications and benefits of AI in healthcare, aiming to prepare the next generation of medical professionals for a future where technology and healthcare are deeply intertwined.</p>
+        <div class="btn-group">
+            <a href="#work" class="btn btn-primary">View Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
 </section>
 
-
-        <!-- Course Overview and Resources -->
-        <section id="course-overview">
-            <h2>Course Overview and Resources</h2>
-            <p>Access comprehensive course materials, including syllabi, detailed lecture notes, and extensive resources to enhance your learning experience.</p>
-        </section>
-
-        <!-- Workshop Slides -->
-        <section id="workshop-slides">
-            <h2>Workshop Slides</h2>
-            <div class="row">
-                <div class="col-4">
-                    <a href="link-to-session-1" class="image thumb">
-                        <img src="images/sess1.png" alt="Session 1 Slides Thumbnail" style="max-width: 100%;" />
-                    </a>
-                    <h3>Session 1: Introduction to AI</h3>
-                    <p>Explore AI fundamentals, including definitions and common misconceptions.</p>
-                </div>
-                <div class="col-4">
-                    <a href="link-to-session-2" class="image thumb">
-                        <img src="images/sess2.png" alt="Session 2 Slides Thumbnail" style="max-width: 100%;" />
-                    </a>
-                    <h3>Session 2: Data Science Basics</h3>
-                    <p>Understand data preprocessing and analysis techniques in medical applications.</p>
-                </div>
-                <div class="col-4">
-                    <a href="link-to-session-3" class="image thumb">
-                        <img src="images/sess3.png" alt="Session 3 Slides Thumbnail" style="max-width: 100%;" />
-                    </a>
-                    <h3>Session 3: Machine Learning Models</h3>
-                    <p>Dive into the deployment of machine learning models in healthcare settings.</p>
-                </div>
-                <div class="col-4">
-                    <a href="link-to-session-4" class="image thumb">
-                        <img src="images/sess4.png" alt="Session 4 Slides Thumbnail" style="max-width: 100%;" />
-                    </a>
-                    <h3>Session 4: Neural Networks</h3>
-                    <p>An in-depth look at modern neural network architectures and their applications in medicine.</p>
-                </div>
+<!-- ============================================================
+     2. WHAT WE DO
+     4-column grid on desktop, stacked on mobile.
+     Short, specific copy — no buzzwords.
+     ============================================================ -->
+<section class="section" id="about">
+    <div class="container">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Research, education, and community at the intersection of AI and health care</h2>
+        <div class="grid grid-4">
+            <div class="card">
+                <!-- Icon: book/research -->
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                <h3>Research</h3>
+                <p>We publish peer-reviewed work on AI in medical education, clinical workflows, and family medicine.</p>
             </div>
-        </section>
-
-        <!-- Related Research -->
-        <section id="related-research">
-            <h2>Related Research</h2>
-            <p>Our student group has contributed to several peer-reviewed publications, focusing on AI's role in medical education, ethical implications in healthcare, and clinical applications. These works underline our commitment to advancing medical AI, demonstrating our engagement with critical issues and the practical impact of our research on future medical practices.</p>
-            <ul>
-                <li>
-                    <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000255">
-                        Nikola Pupic et al., "An evidence-based approach to artificial intelligence education for medical students: A systematic review", PLoS Digital Health, 2023
-                    </a>
-                </li>
-                <li>
-                    <a href="https://proceedings.cmbes.ca/index.php/proceedings/article/view/997">
-                        Aryan Ghaffarizadeh et al., "Artificial Intelligence Education for Medical Students: A Systematic Review", CMBES Proceedings, 45, 2023
-                    </a>
-                </li>
-                <li>
-                    <a href="https://medinform.jmir.org/2022/8/e34304">
-                        Zoe Hu et al., "Tempering Expectations on the Medical Artificial Intelligence Revolution: The Medical Trainee Viewpoint", JMIR Medical Informatics, 2022
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.nature.com/articles/s43856-022-00125-4">
-                        Ricky Hu et al., "Insights from teaching artificial intelligence to medical students in Canada", Communications Medicine, 2022
-                    </a>
-                </li>
-                <li>
-                    <a href="https://mededu.jmir.org/2022/1/e33390/">
-                        Minnie Teng et al., "Health Care Students’ Perspectives on Artificial Intelligence: Countrywide Survey in Canada", JMIR Medical Education, 2022
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-<!-- About Us -->
-<section id="about-us">
-    <h2>About Us</h2>
-    <p>We are a student team dedicated to bridging the gap between technology and medicine.</p>
-    <p>Meet the dedicated students driving the future of medical education with AI technology.</p>
-
-    <!-- Team Section -->
-    <section id="team">
-        <h2>Our Team</h2>
-        <div class="row">
-            <!-- Current Member Profiles -->
-            <div class="col-4">
-                <img src="images/rh.png" alt="Ricky Hu" class="team-image"" />
-                <h3>Ricky Hu</h3>
-                <p>Internal Medicine Resident, UBC</p>
+            <div class="card">
+                <!-- Icon: project/build -->
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                <h3>Projects</h3>
+                <p>We design and evaluate practical initiatives, from student-led workshops to clinical documentation and workflow research.</p>
             </div>
-            <div class="col-4">
-                <img src="images/rs.png" alt="Rohit Singla" class="team-image"" />
-                <h3>Rohit Singla</h3>
-                <p>MD/PhD Student, UBC</p>
+            <div class="card">
+                <!-- Icon: education/lightbulb -->
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="10" y1="17" x2="10" y2="21"/><line x1="14" y1="17" x2="14" y2="21"/></svg>
+                <h3>Education</h3>
+                <p>We build curriculum, workshops, and resources that improve AI literacy for medical and health professional learners.</p>
             </div>
-            <div class="col-4">
-                <img src="images/ck.jpg" alt="Caroline Kim" class="team-image"" />
-                <h3>Caroline Kim</h3>
-                <p>MD Student, UBC</p>
-            </div>
-            <div class="col-4">
-                <img src="images/np.jpg" alt="Nikola Pupic" class="team-image"" />
-                <h3>Nikola Pupic</h3>
-                <p>MD Student, UBC</p>
-            </div>
-            <div class="col-4">
-                <img src="images/ag.jpg" alt="Aryan Ghaffari-Zadeh" class="team-image"" />
-                <h3>Aryan Ghaffari-Zadeh</h3>
-                <p>MD Student, UBC</p>
+            <div class="card">
+                <!-- Icon: community/people -->
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <h3>Community</h3>
+                <p>We connect students, clinicians, and researchers across disciplines to support responsible AI adoption in health care.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Alumni Section -->
-    <section id="alumni">
-        <h2>Our Alumni</h2>
-        <p>Contributions from our alumni continue to inspire and impact our initiatives.</p>
-        <div class="row">
-            <!-- Alumni Profiles -->
-            <div class="col-4">
-                <img src="images/pp.png" alt="Prashant Pandey" class="team-image"" />
-                <h3>Prashant Pandey</h3>
-                <p>PhD Graduate, Biomedical Engineering, UBC</p>
-            </div>
-            <div class="col-4">
-                <img src="images/zh.png" alt="Zoe Hu" class="team-image"" />
-                <h3>Zoe Hu</h3>
-                <p>Radiology Resident, Queen's University</p>
-            </div>
-            <div class="col-4">
-                <img src="images/ma.png" alt="Mishal Ashraf" class="team-image"" />
-                <h3>Mishal Ashraf</h3>
-                <p>MASc Student, UBC</p>
-            </div>
-            <div class="col-4">
-                <img src="images/fc.jpg" alt="Frank Chen" class="team-image" />
-                <h3>Frank Chen</h3>
-                <p>MD Student, Queen's University</p>
-            </div>
-            <div class="col-4">
-                <img src="images/as.jpg" alt="Aidan Sanders" class="team-image"" />
-                <h3>Aidan Sanders</h3>
-                <p>MD Student, Queen's University</p>
-            </div>
-            <div class="col-4">
-                <img src="images/kf.png" alt="Kevin Fan" class="team-image"" />
-                <h3>Kevin Fan </h3>
-                <p>Radiation Oncology Resident, University of Toronto</p>
-            </div>
-            <div class="col-4">
-                <img src="images/mt.png" alt="Miiini Teng" class="team-image"" />
-                <h3>Miiini Teng</h3>
-                <p>Public Health Resident, UBC</p>
-            </div>
-            <div class="col-4">
-                <img src="images/oy.png" alt="Olivia Yau" class="team-image"" />
-                <h3>Olivia Yau</h3>
-                <p>Family Medicine Resident, UBC</p>
-            </div>
-        </div>
-    </section>
+    </div>
 </section>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li><a href="http://www.github.com/ubcaimed" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                <li><a href="mailto:ubcaimss@rsingla.ca" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-        </div>
-    </footer>
+<!-- ============================================================
+     3. FEATURED WORK
+     Publication-forward section. Chronological project cards.
+     Each card: year, source, title, summary, key insight.
+     This is the visual anchor of the homepage.
+     ============================================================ -->
+<section class="section" id="work">
+    <div class="container">
+        <p class="section-label">Featured Work</p>
+        <h2 class="section-title">Selected publications and practice-facing articles</h2>
+        <p class="section-desc">Our work spans peer-reviewed journals, practice publications, and curriculum research — grounded in real clinical and educational settings.</p>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
+        <div class="grid grid-2">
+
+            <!-- 2020 — Medical Education -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2020</span>
+                    <span class="project-card-source">Medical Education</span>
+                </div>
+                <h3>Introductory machine learning for medical students: A pilot</h3>
+                <p class="project-card-summary">A student-led pilot course at UBC introduced medical students to machine learning through a 10-hour extracurricular curriculum combining lectures, Python workshops, guest speakers, and a team project.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> First introductory ML course for medical students in Canada. 84% of respondents had little to no coding experience; students rated the course 4.5/5 and achieved 92% accuracy classifying breast tumours.</div>
+            </article>
+
+            <!-- 2022 — Communications Medicine -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2022</span>
+                    <span class="project-card-source">Communications Medicine</span>
+                </div>
+                <h3><a href="https://www.nature.com/articles/s43856-022-00125-4">Insights from teaching artificial intelligence to medical students in Canada</a></h3>
+                <p class="project-card-summary">Describes a five-week Introduction to Medical AI workshop delivered across three iterations and refined to fit how medical students learn, emphasizing case-based teaching and guided programming.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> The program grew from 8 students in 2019 to 225 registrants from 8 Canadian medical schools in 2020, showing that student-led AI education can scale nationally.</div>
+            </article>
+
+            <!-- 2022 — JMIR Medical Education -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2022</span>
+                    <span class="project-card-source">JMIR Medical Education</span>
+                </div>
+                <h3><a href="https://mededu.jmir.org/2022/1/e33390/">Health care students' perspectives on artificial intelligence: Countrywide survey in Canada</a></h3>
+                <p class="project-card-summary">A national survey examining how students across health professions understand AI, how they expect it to affect their work, and what they want from future curricula.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> 2,167 respondents across 10 health professions and 18 universities. 51% could not define AI accurately; 79% expected AI to affect their careers; 75% had a positive outlook.</div>
+            </article>
+
+            <!-- 2023 — PLOS Digital Health -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2023</span>
+                    <span class="project-card-source">PLOS Digital Health</span>
+                </div>
+                <h3><a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000255">An evidence-based approach to artificial intelligence education for medical students: A systematic review</a></h3>
+                <p class="project-card-summary">A systematic review synthesizing literature on what medical students should learn about AI and how AI education should be implemented responsibly.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> Screened 991 records and included 34 studies, identifying six recurring curriculum themes: ethics, theory, communication, collaboration, quality improvement, and perception.</div>
+            </article>
+
+            <!-- 2024 — npj Digital Medicine -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2024</span>
+                    <span class="project-card-source">npj Digital Medicine</span>
+                </div>
+                <h3>Developing a Canadian artificial intelligence medical curriculum using a Delphi study</h3>
+                <p class="project-card-summary">A national Delphi study translating prior survey and review work into a concrete competency-based curriculum framework for Canadian undergraduate medical education.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> 18 experts across 3 survey rounds judged 82 of 107 curricular competencies essential — one of the clearest consensus-based curriculum frameworks in AI medical education.</div>
+            </article>
+
+            <!-- 2024 — This Changed My Practice -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2024</span>
+                    <span class="project-card-source">This Changed My Practice (UBC CPD)</span>
+                </div>
+                <h3>Talking smart: conversational AI streamlines clinical practice</h3>
+                <p class="project-card-summary">A practice-focused article on conversational AI and digital scribes in family medicine, centered on documentation burden, burnout, and cautious use of AI in patient encounters.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> Physician burnout rates as high as 45.7% in Canada with an estimated annual cost of $213 million. Digital scribes are positioned as a response to documentation burden — with physician review, consent, and privacy safeguards required.</div>
+            </article>
+
+            <!-- 2025 — BC Medical Journal -->
+            <article class="project-card">
+                <div class="project-card-meta">
+                    <span class="project-card-year">2025</span>
+                    <span class="project-card-source">BC Medical Journal</span>
+                </div>
+                <h3>Artificial intelligence in family medicine: Opportunities, impacts, and challenges</h3>
+                <p class="project-card-summary">Maps how AI may influence the continuum of patient care in family medicine — from patient engagement and encounter preparation to diagnosis, treatment planning, and long-term management.</p>
+                <div class="project-card-insight"><strong>Key Insight:</strong> Organizes AI use across five phases of care. Cites a gastroenterology study where AI-based record organization saved clinicians 18% of the time spent addressing clinical questions without reducing accuracy.</div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     4. TIMELINE
+     Clean chronological view of milestones.
+     Minimal — just year + description.
+     ============================================================ -->
+<section class="section" id="timeline">
+    <div class="container">
+        <p class="section-label">Timeline</p>
+        <h2 class="section-title">Publication and milestone history</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-year">2020</span>
+                <p class="timeline-text">Medical Education pilot course publication</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2022</span>
+                <p class="timeline-text">Communications Medicine workshop paper</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2022</span>
+                <p class="timeline-text">JMIR national student survey — 2,167 respondents across 18 universities</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2023</span>
+                <p class="timeline-text">PLOS Digital Health systematic review — 34 studies, 6 curriculum themes</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <p class="timeline-text">npj Digital Medicine Delphi curriculum paper — 82 essential competencies</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <p class="timeline-text">Talking smart practice article — conversational AI in family medicine</p>
+            </div>
+            <div class="timeline-item">
+                <span class="timeline-year">2025</span>
+                <p class="timeline-text">BC Medical Journal — AI across five phases of family medicine care</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     5. PROJECTS / INITIATIVES
+     Card-based grid of real work products.
+     Each card: name, description, output type.
+     ============================================================ -->
+<section class="section" id="projects">
+    <div class="container">
+        <p class="section-label">Projects &amp; Initiatives</p>
+        <h2 class="section-title">What our members have built, studied, and contributed to</h2>
+        <div class="grid grid-3">
+            <div class="initiative-card">
+                <h3>Student-Led AI Curriculum Workshops</h3>
+                <p>Designed and delivered introductory AI workshops for medical students, growing from a single UBC cohort to a nationally delivered program across Canadian medical schools.</p>
+                <span class="initiative-tag">Workshop · Curriculum</span>
+            </div>
+            <div class="initiative-card">
+                <h3>National Survey on AI Literacy</h3>
+                <p>Surveyed 2,167 students across 10 health professions and 18 universities to assess AI knowledge, expectations, and curricular needs in Canadian health education.</p>
+                <span class="initiative-tag">Publication · Survey</span>
+            </div>
+            <div class="initiative-card">
+                <h3>AI Curriculum for Medical Education</h3>
+                <p>Developed a consensus-based competency framework through a three-round Delphi study with 18 national experts, identifying 82 essential curricular competencies.</p>
+                <span class="initiative-tag">Curriculum · Publication</span>
+            </div>
+            <div class="initiative-card">
+                <h3>Digital Scribe Workflow Research</h3>
+                <p>Studied conversational AI and digital scribes as tools for reducing documentation burden and physician burnout in family medicine, with emphasis on privacy and consent.</p>
+                <span class="initiative-tag">Article · Research</span>
+            </div>
+            <div class="initiative-card">
+                <h3>Family Medicine AI Translation</h3>
+                <p>Mapped AI applications across five phases of patient care in family medicine, translating research evidence into practical guidance for clinicians.</p>
+                <span class="initiative-tag">Publication · Knowledge Mobilization</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     6. PEOPLE
+     Simple grid with photo, name, role.
+     Concise, human bios. Academic tone.
+     ============================================================ -->
+<section class="section" id="people">
+    <div class="container">
+        <p class="section-label">People</p>
+        <h2 class="section-title">Our team and alumni</h2>
+
+        <!-- Current Team -->
+        <div class="people-subsection">
+            <h3>Current Team</h3>
+            <div class="grid grid-3">
+                <div class="person-card">
+                    <img src="images/rh.png" alt="Ricky Hu" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Ricky Hu</h3>
+                        <p class="person-card-role">Resident physician, Internal Medicine, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/rs.png" alt="Rohit Singla" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Rohit Singla</h3>
+                        <p class="person-card-role">MD/PhD trainee, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/ck.jpg" alt="Caroline Kim" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Caroline Kim</h3>
+                        <p class="person-card-role">Medical student, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/np.jpg" alt="Nikola Pupic" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Nikola Pupic</h3>
+                        <p class="person-card-role">Medical student, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/ag.jpg" alt="Aryan Ghaffari-Zadeh" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Aryan Ghaffari-Zadeh</h3>
+                        <p class="person-card-role">Medical student, UBC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alumni -->
+        <div class="people-subsection">
+            <h3>Alumni</h3>
+            <div class="grid grid-3">
+                <div class="person-card">
+                    <img src="images/pp.png" alt="Prashant Pandey" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Prashant Pandey</h3>
+                        <p class="person-card-role">PhD Graduate, Biomedical Engineering, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/zh.png" alt="Zoe Hu" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Zoe Hu</h3>
+                        <p class="person-card-role">Resident physician, Radiology, Queen's University</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/ma.png" alt="Mishal Ashraf" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Mishal Ashraf</h3>
+                        <p class="person-card-role">MASc Student, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/fc.jpg" alt="Frank Chen" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Frank Chen</h3>
+                        <p class="person-card-role">Medical student, Queen's University</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/as.jpg" alt="Aidan Sanders" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Aidan Sanders</h3>
+                        <p class="person-card-role">Medical student, Queen's University</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/kf.png" alt="Kevin Fan" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Kevin Fan</h3>
+                        <p class="person-card-role">Resident physician, Radiation Oncology, University of Toronto</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/mt.png" alt="Minnie Teng" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Minnie Teng</h3>
+                        <p class="person-card-role">Resident physician, Public Health, UBC</p>
+                    </div>
+                </div>
+                <div class="person-card">
+                    <img src="images/oy.png" alt="Olivia Yau" class="person-card-photo" />
+                    <div class="person-card-info">
+                        <h3>Olivia Yau</h3>
+                        <p class="person-card-role">Resident physician, Family Medicine, UBC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     7. CTA / CONTACT
+     Invitational, academic tone. Not promotional.
+     ============================================================ -->
+<section class="section cta-section" id="contact">
+    <div class="container">
+        <h2>Interested in working at the intersection of AI and medicine?</h2>
+        <p>We welcome students and collaborators interested in research, education, and thoughtful clinical applications of AI.</p>
+        <div class="btn-group" style="justify-content: center;">
+            <a href="mailto:ubcaimss@gmail.com" class="btn btn-primary">Join the Team</a>
+            <a href="mailto:ubcaimss@gmail.com" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <span class="footer-text">&copy; 2025 AI in Medicine at UBC</span>
+        <ul class="footer-links" role="list">
+            <li><a href="https://github.com/ubcaimed" aria-label="GitHub">GitHub</a></li>
+            <li><a href="mailto:ubcaimss@gmail.com" aria-label="Email">Email</a></li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Minimal JS: mobile nav toggle only -->
+<script>
+(function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var mobileNav = document.getElementById('mobile-nav');
+    if (!toggle || !mobileNav) return;
+
+    toggle.addEventListener('click', function () {
+        var isOpen = mobileNav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile nav when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            mobileNav.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
+</script>
 
 </body>
 </html>
