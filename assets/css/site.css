@@ -303,6 +303,10 @@ p {
   .nav-toggle {
     display: none;
   }
+  .mobile-nav,
+  .mobile-nav.is-open {
+    display: none;
+  }
   /* Prevent mobile nav from staying visible after viewport resize */
   .mobile-nav,
   .mobile-nav.is-open {
