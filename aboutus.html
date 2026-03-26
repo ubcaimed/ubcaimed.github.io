@@ -40,7 +40,7 @@
 </nav>
 
 <!-- People -->
-<section class="section" id="team" style="padding-top: 3rem;">
+<section class="section section-flush" id="team">
     <div class="container">
         <p class="section-label">People</p>
         <h2 class="section-title">Our team and alumni</h2>
@@ -51,35 +51,35 @@
                 <div class="person-card">
                     <img src="images/rh.png" alt="Ricky Hu" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Ricky Hu</h3>
+                        <h4>Ricky Hu</h4>
                         <p class="person-card-role">Resident physician, Internal Medicine, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/rs.png" alt="Rohit Singla" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Rohit Singla</h3>
+                        <h4>Rohit Singla</h4>
                         <p class="person-card-role">MD/PhD trainee, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/ck.jpg" alt="Caroline Kim" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Caroline Kim</h3>
+                        <h4>Caroline Kim</h4>
                         <p class="person-card-role">Medical student, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/np.jpg" alt="Nikola Pupic" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Nikola Pupic</h3>
+                        <h4>Nikola Pupic</h4>
                         <p class="person-card-role">Medical student, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/ag.jpg" alt="Aryan Ghaffari-Zadeh" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Aryan Ghaffari-Zadeh</h3>
+                        <h4>Aryan Ghaffari-Zadeh</h4>
                         <p class="person-card-role">Medical student, UBC</p>
                     </div>
                 </div>
@@ -92,56 +92,56 @@
                 <div class="person-card">
                     <img src="images/pp.png" alt="Prashant Pandey" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Prashant Pandey</h3>
+                        <h4>Prashant Pandey</h4>
                         <p class="person-card-role">PhD Graduate, Biomedical Engineering, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/zh.png" alt="Zoe Hu" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Zoe Hu</h3>
+                        <h4>Zoe Hu</h4>
                         <p class="person-card-role">Resident physician, Radiology, Queen's University</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/ma.png" alt="Mishal Ashraf" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Mishal Ashraf</h3>
+                        <h4>Mishal Ashraf</h4>
                         <p class="person-card-role">MASc Student, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/fc.jpg" alt="Frank Chen" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Frank Chen</h3>
+                        <h4>Frank Chen</h4>
                         <p class="person-card-role">Medical student, Queen's University</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/as.jpg" alt="Aidan Sanders" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Aidan Sanders</h3>
+                        <h4>Aidan Sanders</h4>
                         <p class="person-card-role">Medical student, Queen's University</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/kf.png" alt="Kevin Fan" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Kevin Fan</h3>
+                        <h4>Kevin Fan</h4>
                         <p class="person-card-role">Resident physician, Radiation Oncology, University of Toronto</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/mt.png" alt="Minnie Teng" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Minnie Teng</h3>
+                        <h4>Minnie Teng</h4>
                         <p class="person-card-role">Resident physician, Public Health, UBC</p>
                     </div>
                 </div>
                 <div class="person-card">
                     <img src="images/oy.png" alt="Olivia Yau" class="person-card-photo" />
                     <div class="person-card-info">
-                        <h3>Olivia Yau</h3>
+                        <h4>Olivia Yau</h4>
                         <p class="person-card-role">Resident physician, Family Medicine, UBC</p>
                     </div>
                 </div>
@@ -161,25 +161,7 @@
     </div>
 </footer>
 
-<script>
-(function () {
-    var toggle = document.querySelector('.nav-toggle');
-    var mobileNav = document.getElementById('mobile-nav');
-    if (!toggle || !mobileNav) return;
-
-    toggle.addEventListener('click', function () {
-        var isOpen = mobileNav.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    mobileNav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            mobileNav.classList.remove('is-open');
-            toggle.setAttribute('aria-expanded', 'false');
-        });
-    });
-})();
-</script>
+<script src="assets/js/site.js"></script>
 
 </body>
 </html>

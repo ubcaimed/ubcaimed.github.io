@@ -22,6 +22,17 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0s !important;
+  }
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: #1A1A1A;
@@ -186,6 +197,10 @@ p {
   flex-wrap: wrap;
 }
 
+.btn-group-center {
+  justify-content: center;
+}
+
 /* ---- Navigation ---- */
 .site-nav {
   position: sticky;
@@ -286,6 +301,11 @@ p {
     display: flex;
   }
   .nav-toggle {
+    display: none;
+  }
+  /* Prevent mobile nav from staying visible after viewport resize */
+  .mobile-nav,
+  .mobile-nav.is-open {
     display: none;
   }
 }
@@ -566,7 +586,7 @@ p {
   background: #E5E7EB;
 }
 
-.person-card-info h3 {
+.person-card-info h4 {
   font-size: 0.9375rem;
   margin-bottom: 0.125rem;
   color: #002145;
@@ -579,7 +599,7 @@ p {
 }
 
 /* ---- CTA Section ---- */
-.cta-section {
+.section.cta-section {
   background: #002145;
   color: #fff;
   text-align: center;
@@ -702,6 +722,11 @@ p {
   .project-card {
     padding: 1.25rem;
   }
+}
+
+/* Page-level modifier: reduce top padding when section is first content */
+.section-flush {
+  padding-top: 3rem;
 }
 
 /* ---- Utility ---- */
