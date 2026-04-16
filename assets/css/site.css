@@ -1,0 +1,747 @@
+/*
+ * UBC AI in Medicine — Academic Design System
+ *
+ * Design decisions:
+ * - Typography-driven hierarchy using Inter + Source Serif Pro
+ * - UBC-aligned color palette (#002145 primary)
+ * - Generous whitespace, thin borders, no heavy shadows
+ * - Mobile-first responsive layout
+ * - Reusable component patterns (section, card, timeline)
+ */
+
+/* ---- Reset & Base ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0s !important;
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1A1A1A;
+  background: #FAFAFA;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #1F4E79;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #002145;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  color: #002145;
+  line-height: 1.25;
+}
+
+h1 { font-size: 2.5rem; }      /* 40px */
+h2 { font-size: 1.75rem; }     /* 28px */
+h3 { font-size: 1.25rem; }     /* 20px */
+h4 { font-size: 1.125rem; }    /* 18px */
+
+p {
+  margin-bottom: 1rem;
+  color: #1A1A1A;
+}
+
+.text-muted {
+  color: #6B7280;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+/* Accent serif for special use */
+.serif {
+  font-family: 'Source Serif Pro', 'Georgia', serif;
+}
+
+/* ---- Layout ---- */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid #E5E7EB;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6B7280;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  max-width: 640px;
+  color: #6B7280;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Grid ---- */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.grid-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 960px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.625rem 1.5rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #002145;
+  color: #fff;
+  border-color: #002145;
+}
+
+.btn-primary:hover {
+  background: #1F4E79;
+  border-color: #1F4E79;
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #002145;
+  border-color: #002145;
+}
+
+.btn-outline:hover {
+  background: #002145;
+  color: #fff;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-group-center {
+  justify-content: center;
+}
+
+/* ---- Navigation ---- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+}
+
+.site-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #002145;
+  white-space: nowrap;
+}
+
+.site-nav-brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+.site-nav-links {
+  display: none;
+  list-style: none;
+  gap: 1.75rem;
+}
+
+.site-nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #6B7280;
+  transition: color 0.15s ease;
+}
+
+.site-nav-links a:hover {
+  color: #002145;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #002145;
+}
+
+.nav-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Mobile dropdown */
+.mobile-nav {
+  display: none;
+  background: #fff;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 0.75rem 1.5rem 1rem;
+}
+
+.mobile-nav.is-open {
+  display: block;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #6B7280;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a:hover {
+  color: #002145;
+}
+
+@media (min-width: 768px) {
+  .site-nav-links {
+    display: flex;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .mobile-nav,
+  .mobile-nav.is-open {
+    display: none;
+  }
+  /* Prevent mobile nav from staying visible after viewport resize */
+  .mobile-nav,
+  .mobile-nav.is-open {
+    display: none;
+  }
+}
+
+/* ---- Hero ---- */
+.hero {
+  padding: 5rem 0 4rem;
+  background: #fff;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+.hero .hero-subtitle {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 1.1875rem;
+  color: #1F4E79;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.hero .hero-body {
+  color: #6B7280;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E5E7EB;
+}
+
+.hero-meta-item {
+  font-size: 0.8125rem;
+  color: #6B7280;
+}
+
+.hero-meta-item strong {
+  color: #002145;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 6rem 0 5rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ---- Card (shared base) ---- */
+.card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: #CBD5E1;
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1rem;
+  color: #1F4E79;
+}
+
+.card h3 {
+  font-size: 1.0625rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ---- Project Card (Featured Work) ---- */
+.project-card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 1.75rem;
+  transition: border-color 0.15s ease;
+}
+
+.project-card:hover {
+  border-color: #CBD5E1;
+}
+
+.project-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-card-year {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #002145;
+  background: #EFF6FF;
+  padding: 0.125rem 0.5rem;
+  border-radius: 3px;
+}
+
+.project-card-source {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  font-style: italic;
+}
+
+.project-card h3 {
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  margin-bottom: 0.625rem;
+  color: #002145;
+}
+
+.project-card h3 a {
+  color: inherit;
+}
+
+.project-card h3 a:hover {
+  color: #1F4E79;
+}
+
+.project-card-summary {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.project-card-insight {
+  font-size: 0.875rem;
+  color: #1A1A1A;
+  background: #F9FAFB;
+  border-left: 3px solid #CFAE70;
+  padding: 0.625rem 0.875rem;
+  line-height: 1.55;
+  border-radius: 0 4px 4px 0;
+}
+
+.project-card-insight strong {
+  color: #002145;
+  font-weight: 600;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.375rem;
+  bottom: 0.375rem;
+  width: 2px;
+  background: #E5E7EB;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.75rem;
+  top: 0.375rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1F4E79;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #1F4E79;
+}
+
+.timeline-year {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #002145;
+  margin-bottom: 0.125rem;
+}
+
+.timeline-text {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* ---- Initiative Card ---- */
+.initiative-card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: border-color 0.15s ease;
+}
+
+.initiative-card:hover {
+  border-color: #CBD5E1;
+}
+
+.initiative-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.375rem;
+  color: #002145;
+}
+
+.initiative-card p {
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.initiative-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1F4E79;
+  background: #EFF6FF;
+  padding: 0.125rem 0.5rem;
+  border-radius: 3px;
+}
+
+/* ---- Person Card ---- */
+.person-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  background: #fff;
+  transition: border-color 0.15s ease;
+}
+
+.person-card:hover {
+  border-color: #CBD5E1;
+}
+
+.person-card-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #E5E7EB;
+}
+
+.person-card-info h4 {
+  font-size: 0.9375rem;
+  margin-bottom: 0.125rem;
+  color: #002145;
+}
+
+.person-card-role {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  margin-bottom: 0;
+}
+
+/* ---- CTA Section ---- */
+.section.cta-section {
+  background: #002145;
+  color: #fff;
+  text-align: center;
+  border-top: none;
+}
+
+.cta-section h2 {
+  color: #fff;
+  max-width: 540px;
+  margin: 0 auto 0.75rem;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+}
+
+.cta-section .btn-primary {
+  background: #fff;
+  color: #002145;
+  border-color: #fff;
+}
+
+.cta-section .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #002145;
+}
+
+.cta-section .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cta-section .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  padding: 2rem 0;
+  border-top: 1px solid #E5E7EB;
+  background: #fff;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-text {
+  font-size: 0.8125rem;
+  color: #6B7280;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.8125rem;
+  color: #6B7280;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: #002145;
+}
+
+/* ---- People Section: Team + Alumni ---- */
+.people-subsection {
+  margin-top: 2.5rem;
+}
+
+.people-subsection:first-child {
+  margin-top: 0;
+}
+
+.people-subsection h3 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #E5E7EB;
+  color: #002145;
+}
+
+/* ---- Responsive adjustments ---- */
+@media (max-width: 639px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .hero-subtitle {
+    font-size: 1.0625rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero-meta {
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Page-level modifier: reduce top padding when section is first content */
+.section-flush {
+  padding-top: 3rem;
+}
+
+/* ---- Utility ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
